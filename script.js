@@ -61,34 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
         }
     });
-});
 
-// Функция для проверки мобильного устройства
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// Адаптивное поведение для мобильных устройств
-window.addEventListener('resize', function() {
-    if (isMobile()) {
-        // Дополнительная логика для мобильных устройств
-        console.log('Мобильное устройство обнаружено');
-    }
-});
-
-// Функция для скачивания скина
-function downloadSkin(filePath, fileName) {
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
-// Обработчик для кнопок скачивания - ЕДИНСТВЕННЫЙ обработчик
-document.addEventListener('DOMContentLoaded', function() {
+    // Обработчик для кнопок скачивания скинов
     const downloadButtons = document.querySelectorAll('.download-btn[data-file]');
     
     downloadButtons.forEach(button => {
@@ -110,6 +84,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Функция для проверки мобильного устройства
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Адаптивное поведение для мобильных устройств
+window.addEventListener('resize', function() {
+    if (isMobile()) {
+        // Дополнительная логика для мобильных устройств
+        console.log('Мобильное устройство обнаружено');
+    }
+});
+            
+            // Создаем ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.download = fileName;
+            link.style.display = 'none';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
 function isMobile() {
     return window.innerWidth <= 768;
 }
@@ -122,7 +120,7 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Функция для скачивания скина
+// Функция для скачивания скинов
 function downloadSkin(filePath, fileName) {
     const link = document.createElement('a');
     link.href = filePath;
