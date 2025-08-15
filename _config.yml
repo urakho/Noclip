@@ -1,0 +1,31 @@
+# Конфигурация Jekyll для GitHub Pages
+# Этот файл поможет GitHub Pages правильно обработать ваш сайт
+
+# Базовые настройки
+title: Noclip
+description: "Веб-сайт проекта Noclip"
+url: "https://urakho.github.io"
+baseurl: "/Noclip"
+
+# Настройки сборки
+plugins:
+  - jekyll-sitemap
+
+# Исключения из сборки
+exclude:
+  - README.md
+  - LICENSE
+
+# Включение файлов
+include:
+  - .htaccess
+
+# Настройки Markdown
+markdown: kramdown
+highlighter: rouge
+
+# Настройки для поисковых систем
+google_analytics: # Добавьте свой ID Google Analytics если нужно
+
+# Социальные сети (опционально)
+github_username: urakho
