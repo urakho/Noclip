@@ -132,3 +132,25 @@ function downloadSkin(filePath, fileName) {
     link.click();
     document.body.removeChild(link);
 }
+
+// Обработчик для кнопок скачивания
+document.addEventListener('DOMContentLoaded', function() {
+    const downloadButtons = document.querySelectorAll('.download-btn[data-file]');
+    
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filePath = this.getAttribute('data-file');
+            const fileName = this.getAttribute('data-filename');
+            
+            // Создаем ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.download = fileName;
+            link.style.display = 'none';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    });
+});
