@@ -38,6 +38,18 @@ nav {
     padding: 0 20px;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
 nav h1 {
     font-size: 2rem;
     font-weight: bold;
