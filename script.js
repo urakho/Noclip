@@ -1,6 +1,22 @@
-// Плавная прокрутка для навигационных ссылок
+// Функция для проверки мобильного устройства
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Функция для скачивания скинов
+function downloadSkin(filePath, fileName) {
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = fileName;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Объединенный обработчик DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем все навигационные ссылки
+    // Плавная прокрутка для навигационных ссылок
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     
     navLinks.forEach(link => {
@@ -72,23 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const filePath = this.getAttribute('data-file');
             const fileName = this.getAttribute('data-filename');
             
-            // Создаем ссылку для скачивания
-            const link = document.createElement('a');
-            link.href = filePath;
-            link.download = fileName;
-            link.style.display = 'none';
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            downloadSkin(filePath, fileName);
         });
     });
 });
-
-// Функция для проверки мобильного устройства
-function isMobile() {
-    return window.innerWidth <= 768;
-}
 
 // Адаптивное поведение для мобильных устройств
 window.addEventListener('resize', function() {
@@ -96,59 +99,4 @@ window.addEventListener('resize', function() {
         // Дополнительная логика для мобильных устройств
         console.log('Мобильное устройство обнаружено');
     }
-});
-            
-            // Создаем ссылку для скачивания
-            const link = document.createElement('a');
-            link.href = filePath;
-            link.download = fileName;
-            link.style.display = 'none';
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// Адаптивное поведение для мобильных устройств
-window.addEventListener('resize', function() {
-    if (isMobile()) {
-        // Дополнительная логика для мобильных устройств
-        console.log('Мобильное устройство обнаружено');
-    }
-});
-
-// Функция для скачивания скинов
-function downloadSkin(filePath, fileName) {
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
-// Обработчик для кнопок скачивания
-document.addEventListener('DOMContentLoaded', function() {
-    const downloadButtons = document.querySelectorAll('.download-btn[data-file]');
-    
-    downloadButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filePath = this.getAttribute('data-file');
-            const fileName = this.getAttribute('data-filename');
-            
-            // Создаем ссылку для скачивания
-            const link = document.createElement('a');
-            link.href = filePath;
-            link.download = fileName;
-            link.style.display = 'none';
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-    });
 });
