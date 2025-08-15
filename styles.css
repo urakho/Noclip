@@ -9,7 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
 }
 
 .container {
@@ -20,13 +20,13 @@ body {
 
 /* Шапка сайта */
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #6c7b95 0%, #5a6b7d 100%);
     color: white;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 nav {
@@ -57,14 +57,14 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffd700;
+    color: #e8f4f8;
 }
 
 /* Главная секция */
 .hero {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8fa2b2 0%, #7a8ca0 100%);
     color: white;
     min-height: 60vh;
     display: flex;
@@ -87,8 +87,8 @@ nav a:hover {
 }
 
 .cta-button {
-    background: #ffd700;
-    color: #333;
+    background: #5a7a8f;
+    color: white;
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -101,9 +101,9 @@ nav a:hover {
 }
 
 .cta-button:hover {
-    background: #ffed4e;
+    background: #4a6a7f;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(90, 122, 143, 0.4);
 }
 
 /* Секции контента */
@@ -132,7 +132,7 @@ section p {
 
 /* Подвал */
 footer {
-    background: #333;
+    background: #495057;
     color: white;
     text-align: center;
     padding: 2rem 0;
@@ -208,7 +208,7 @@ html {
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #667eea;
+    color: #5a6b7d;
 }
 
 .feature-card p {
@@ -218,7 +218,7 @@ html {
 }
 
 #about-detail {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 #team {
@@ -316,14 +316,14 @@ html {
     font-size: 1.1rem;
 }
 
-/* Minecraft тематические цвета */
+/* Minecraft тематические цвета - спокойные тона */
 #maps {
-    background: linear-gradient(135deg, #8BC34A 0%, #4CAF50 100%);
+    background: linear-gradient(135deg, #a8c8a8 0%, #8fb08f 100%);
     color: white;
 }
 
 #skins {
-    background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+    background: linear-gradient(135deg, #d4b896 0%, #c4a676 100%);
     color: white;
 }
 
