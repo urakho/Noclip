@@ -331,3 +331,33 @@ html {
 #maps h2, #skins h2 {
     color: white;
 }
+
+.skins-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skin-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex: 0 1 300px;
+    max-width: 300px;
+}
+
+.skin-card:hover {
+    transform: translateY(-5px);
+}
+
+.skin-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
