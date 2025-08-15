@@ -28,52 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Обработка кнопок скачивания
-    const downloadButtons = document.querySelectorAll('.download-btn');
-    downloadButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.skin-card, .map-card');
-            const skinName = card.querySelector('h3').textContent;
-            
-            // Для скинов
-            if (card.classList.contains('skin-card')) {
-                let fileName = '';
-                
-                // Определяем файл по названию скина
-                switch(skinName) {
-                    case 'Terminator':
-                        fileName = 'Terminator.png';
-                        break;
-                    case 'Воин':
-                        fileName = 'Warrior.png';
-                        break;
-                    case 'Маг':
-                        fileName = 'Mage.png';
-                        break;
-                    case 'Рыцарь':
-                        fileName = 'Knight.png';
-                        break;
-                    case 'Лучник':
-                        fileName = 'Archer.png';
-                        break;
-                    default:
-                        fileName = skinName + '.png';
-                }
-                
-                // Создаем ссылку для скачивания
-                const link = document.createElement('a');
-                link.href = 'skins/' + fileName;
-                link.download = fileName;
-                link.click();
-            }
-            
-            // Для карт
-            if (card.classList.contains('map-card')) {
-                alert('Скачивание карт будет доступно позже');
-            }
-        });
-    });
-
     // Добавление эффекта появления элементов при прокрутке
     const observerOptions = {
         threshold: 0.1,
@@ -110,6 +64,52 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Функция для проверки мобильного устройства
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Адаптивное поведение для мобильных устройств
+window.addEventListener('resize', function() {
+    if (isMobile()) {
+        // Дополнительная логика для мобильных устройств
+        console.log('Мобильное устройство обнаружено');
+    }
+});
+
+// Функция для скачивания скина
+function downloadSkin(filePath, fileName) {
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = fileName;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Обработчик для кнопок скачивания - ЕДИНСТВЕННЫЙ обработчик
+document.addEventListener('DOMContentLoaded', function() {
+    const downloadButtons = document.querySelectorAll('.download-btn[data-file]');
+    
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const filePath = this.getAttribute('data-file');
+            const fileName = this.getAttribute('data-filename');
+            
+            // Создаем ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.download = fileName;
+            link.style.display = 'none';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    });
+});
 function isMobile() {
     return window.innerWidth <= 768;
 }
