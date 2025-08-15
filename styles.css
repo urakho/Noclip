@@ -141,6 +141,19 @@ footer {
     padding: 2rem 0;
 }
 
+/* Ссылка на телеграмм канал */
+footer p a.telegram-link {
+    color: #0015ff !important;
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+footer p a.telegram-link:hover,
+a[href*="t.me"]:hover {
+    color: #00fbff !important;
+}
+
 /* Анимации */
 @keyframes fadeInUp {
     from {
