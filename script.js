@@ -52,15 +52,55 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Эффект изменения навигации при прокрутке
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
+    // MIT License Modal functionality
+    const licenseLink = document.getElementById('license-link');
+    const licenseModal = document.getElementById('license-modal');
+    const closeBtn = document.querySelector('.close');
+    const agreeBtn = document.querySelector('.agree-btn');
+
+    if (licenseLink) {
+        licenseLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            licenseModal.style.display = 'block';
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            licenseModal.style.display = 'none';
+        });
+    }
+
+    if (agreeBtn) {
+        agreeBtn.addEventListener('click', function() {
+            licenseModal.style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(e) {
+        if (e.target === licenseModal) {
+            licenseModal.style.display = 'none';
+        }
+    });
+
+    // Установить начальный стиль для header
+    const header = document.querySelector('header');
+    if (header) {
+        header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+    }
+});
+
+// Эффект изменения навигации при прокрутке
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (header) {
         if (window.scrollY > 100) {
             header.style.background = 'rgba(102, 126, 234, 0.95)';
         } else {
             header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
         }
-    });
+    }
 });
 
 // Функция для проверки мобильного устройства
