@@ -23,9 +23,3 @@ include:
 # Настройки Markdown
 markdown: kramdown
 highlighter: rouge
-
-# Настройки для поисковых систем
-google_analytics: # Добавьте свой ID Google Analytics если нужно
-
-# Социальные сети (опционально)
-github_username: urakho
