@@ -233,6 +233,77 @@ html {
     line-height: 1.6;
 }
 
+/* Стили для страницы "Инструкции" */
+.instruction-content {
+    margin-top: 3rem;
+}
+
+.instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.instruction-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.instruction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.instruction-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #5a6b7d;
+    text-align: center;
+}
+
+.instruction-card h4 {
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
+    color: #5a6b7d;
+}
+
+.instruction-card ol,
+.instruction-card ul {
+    text-align: left;
+    color: #666;
+    line-height: 1.8;
+    padding-left: 1.5rem;
+}
+
+.instruction-card ol li,
+.instruction-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.instruction-card code {
+    background: #f4f4f4;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #333;
+}
+
+.os-instructions p {
+    margin-bottom: 1rem;
+    text-align: left;
+    color: #666;
+    line-height: 1.6;
+}
+
+#instructions {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
 #about-detail {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
