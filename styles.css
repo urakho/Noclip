@@ -142,10 +142,15 @@ footer {
 }
 
 /* Ссылка на телеграмм канал */
-footer p a.telegram-link {
-    color: #00ffff !important;
+.telegram-link {
+    color: #006aff;
     font-weight: bold;
-    text-decoration: none !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.telegram-link:hover {
+    color: #00026a;
     transition: color 0.3s ease;
 }
 
