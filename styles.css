@@ -401,6 +401,17 @@ html {
     margin-top: 2rem;
 }
 
+.skin-category {
+    flex: 1 0 100%;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    color: #3b2a12;
+    opacity: 0.95;
+    margin-top: 0.5rem;
+}
+
 .map-card, .skin-card {
     background: white;
     border-radius: 15px;
