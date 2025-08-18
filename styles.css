@@ -436,6 +436,49 @@ html {
     margin-bottom: 1rem;
 }
 
+/* Контейнер для изображения скина с описанием при наведении */
+.skin-media {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.skin-media img {
+    margin-bottom: 0;
+    transition: filter 0.3s ease;
+}
+
+.skin-media::after {
+    content: attr(data-desc);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
+
+.skin-media:hover::after {
+    opacity: 1;
+}
+
+.skin-media:hover img {
+    filter: brightness(0.7);
+}
+
 .map-card h3, .skin-card h3 {
     color: #333;
     margin-bottom: 1rem;
